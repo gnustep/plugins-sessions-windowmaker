@@ -1,7 +1,6 @@
 #!/bin/sh
 xset m 20/10 4
 
-#mount /media/Gromac &
 if ps ux | grep -v grep | grep 'gdnc' > /dev/null
 then
     echo "gdnc running, everything is fine"
