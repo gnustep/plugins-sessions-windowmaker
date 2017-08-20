@@ -20,7 +20,7 @@ if ps ux | grep -v grep | grep 'compton'
 then 
     echo "compton is running"
 else
-    compton -bcCGf -D 6 -m 0.8 -o 0.6 -r 10 -t -10 -l -16 &
+    compton &
 fi
 #update-notifyer &
 bg
