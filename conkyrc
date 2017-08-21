@@ -1,0 +1,84 @@
+update_interval 2
+format_human_readable yes
+
+own_window yes
+background no
+own_window_argb_visual yes
+own_window_transparent yes
+own_window_hints below,skip_taskbar,skip_pager,undecorated
+double_buffer yes
+
+alignment bottom_left
+gap_x 60
+gap_y 100
+
+draw_borders no
+draw_outline no
+draw_shades no
+xftfont sans:size=8
+use_xft yes
+text_buffer_size 1536
+xftalpha 1
+default_color fff
+color1 fa0
+color2 fa0
+color3 aaa
+color4 666
+font sans:size=8
+
+TEXT
+${voffset 0}
+${font sans:bold:size=9}${color1}Time and date${voffset -20}${font sans:size=24}${color2}${goto 127}${time %k:%M}${font sans:size=10}${color2}$alignr${time %d.%m.%Y}
+${color3}${voffset -5}${hr 1}
+
+#System
+${voffset 4}${font sans:bold:size=9}${color1}System${color}${font}${alignr}$sysname $kernel on $machine
+${color3}${voffset -5}${hr 1}
+${color}${voffset 4}${font sans:bold:size=8}CPU1 (${freq_g cpu1}GHz)${alignr}CPU2 (${freq_g cpu2}GHz)
+${color3}${font}${cpugraph cpu1 36,150 222222 666666}${alignr}${cpugraph cpu2 36,150 222222 666666} 
+${color}${font sans:bold:size=8}RAM$font ${goto 150} $memperc% ${alignr} $mem/$memmax
+${color4}${membar 6}$color
+${color}${font sans:bold:size=8}Swap$font ${goto 150} $swapperc% ${alignr} $swap/$swapmax
+${color4}${swapbar 6}$color
+${color}${font sans:bold:size=8}Uptime${alignr}$font${uptime}
+
+#Processes
+${voffset 4}${color1}${font sans:bold:size=9}Processes ${font}${color}$alignr${processes}	$alignr(${running_processes} running)
+${color3}${voffset -5}${hr 1}
+${color}${font sans:bold:size=8}Top CPU${goto 165}Top MEM 
+${voffset -10}
+${color}${font sans:size=8}${top name 1} ${goto 105}${top cpu 1}${goto 165}${top_mem name 1}${alignr}${top_mem mem_res 1}
+${color}${font sans:size=8}${top name 2} ${goto 105}${top cpu 2}${goto 165}${top_mem name 2}${alignr}${top_mem mem_res 2}
+${color}${font sans:size=8}${top name 3} ${goto 105}${top cpu 3}${goto 165}${top_mem name 3}${alignr}${top_mem mem_res 3}
+${color}${font sans:size=8}${top name 4} ${goto 105}${top cpu 4}${goto 165}${top_mem name 4}${alignr}${top_mem mem_res 4}
+
+#Network
+${voffset 4}${color1}${font sans:bold:size=9}Network ${font sans:size=8}$color${alignr}IP: ${addr eth0}
+${color3}${voffset -5}${hr 1}
+${voffset -4}${alignr}${color3}${downspeedgraph eth0 25,85 222222 666666}  ${alignr}${color3}${upspeedgraph eth0 25,85 222222 666666}$color
+${color}Download${goto 150}${totaldown eth0}${alignr}${downspeed eth0}/s
+${color}Upload${goto 150}${totalup eth0}${alignr}${upspeed eth0}/s
+#Storage
+${voffset 4}${color1}${font sans:bold:size=9}Storage$font
+${color3}${voffset -5}${hr 1}
+${color4}${fs_bar 14,312 /}${color}
+${goto 5}${voffset -21}$font root ${goto 80}${fs_type /}${goto 119}${fs_size /}${goto 184}${fs_free_perc /}%${goto 224}${fs_free /}${goto 279}${voffset 1}
+${color4}${fs_bar 14,312 /home}${color}${color}
+${goto 5}${voffset -21}$font home ${goto 80}${fs_type /home}${goto 119}${fs_size /home}${goto 184}${fs_free_perc /home}%${goto 224}${fs_free /home}${goto 279}${voffset 1}
+
+#CPU Sensors
+#${voffset 4}${color1}${font sans:bold:size=9}Sensors$font
+#${color3}${voffset -5}${hr 1}
+#${color}${voffset 4}${font sans:bold:size=8}${goto 165}CPU1${goto 260}CPU2
+#${font sans:bold:size=8}Voltage$font${goto 165}${exec cat /sys/devices/temperature/cpu0_voltage}V${goto 260}${exec cat /sys/devices/temperature/cpu1_voltage}V
+#${font sans:bold:size=8}Current$font${goto 165}${exec cat /sys/devices/temperature/cpu0_current}A${goto 260}${exec cat /sys/devices/temperature/cpu1_current}A
+#${font sans:bold:size=8}Temperature$font${goto 165}${exec cat /sys/devices/temperature/cpu0_temperature}°C${goto 260}${exec cat /sys/devices/temperature/cpu1_temperature}°C
+#${font sans:bold:size=8}Intake fan$font${goto 165}${exec cat /sys/devices/temperature/cpu0_intake_fan_rpm}RPM${goto 260}${exec cat /sys/devices/temperature/cpu1_intake_fan_rpm}RPM
+#${font sans:bold:size=8}Exhaust fan$font${goto 165}${exec cat /sys/devices/temperature/cpu0_exhaust_fan_rpm}RPM${goto 260}${exec cat /sys/devices/temperature/cpu1_exhaust_fan_rpm}RPM
+${voffset -6}
+#${font sans:bold:size=8}Drives temperature$font${goto 205}${exec cat /sys/devices/temperature/drives_temperature}°C
+#${font sans:bold:size=8}Drives fan$font${goto 205}${exec cat /sys/devices/temperature/drives_fan_rpm}RPM
+#${font sans:bold:size=8}Backside temperature$font${goto 205}${exec cat /sys/devices/temperature/backside_temperature}°C
+#${font sans:bold:size=8}Backside fan$font${goto 205}${exec cat /sys/devices/temperature/backside_fan_pwm}RPM
+#${font sans:bold:size=8}Disques durs$font${goto 205}${execi 10 /usr/sbin/hddtemp -n /dev/sda}° ${execi 10 /usr/sbin/hddtemp -n /dev/sdb}°
+#${color3}${voffset -5}${hr 1}
