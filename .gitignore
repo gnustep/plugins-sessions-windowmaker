@@ -1,0 +1,6 @@
+.gitignore~
+.AppleDouble
+.gwdir
+*.swp
+.vimrc
+tags
