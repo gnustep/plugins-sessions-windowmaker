@@ -1,6 +1,7 @@
 #!/bin/sh
 xset m 20/10 4
 
+#gdnc
 if ps ux | grep -v grep | grep 'gdnc' > /dev/null
 then
     echo "gdnc running, everything is fine"
@@ -8,7 +9,8 @@ else
     echo "launching gdnc"
     /usr/local/bin/gdnc &
 fi
-#/usr/local/bin/gsim &
+
+#gnome-settings-daemon
 if ps ux | grep -v grep | grep 'gnome-settings-daemon' > /dev/null
 then 
     echo "gnome-settings-daemon running, everything is fine"
@@ -16,14 +18,15 @@ else
     echo "launching gnome-settings-daemon"
     /usr/local/libexec/gnome-settings-daemon &
 fi
+
+#compton
 if ps ux | grep -v grep | grep 'compton'
 then 
     echo "compton is running"
 else
-    compton -bcCGf -D 6 -m 0.8 -o 0.6 -r 10 -t -10 -l -16 &
+    compton &
 fi
-#update-notifyer &
-bg
+
 #GWorkspace
 if ps ux | grep -v grep | grep 'GWorkspace'
 then
@@ -31,6 +34,7 @@ then
 else
     openapp GWorkspace &
 fi
+
 #AClock 
 if ps ux | grep -v grep | grep 'AClock'
 then
@@ -38,6 +42,7 @@ then
 else
     openapp AClock &
 fi
+
 #GSPanel
 if ps ux | grep -v grep | grep 'GSPanel'
 then 
