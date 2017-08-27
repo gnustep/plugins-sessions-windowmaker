@@ -7,8 +7,7 @@ Inherits=Numix-Circle-Light
 Example=directory-x-normal
 
 # Directory list
-Directories=48x48/apps,scalable/apps,48x48/places,scalable/places,48x48/actions,scalable/actions,48x48/mimetypes,scalable/mimetypes
-#,48x48/emblems,scalable/emblems
+Directories=48x48/apps,scalable/apps,48x48/places,scalable/places,48x48/actions,scalable/actions,48x48/mimetypes,scalable/mimetypes,48x48/emblems,scalable/emblems
 
 [48x48/apps]
 Size=48
@@ -58,14 +57,14 @@ MinSize=8
 MaxSize=512
 Type=Scalable
 
-#[48x48/emblems]
-#Size=48
-#Context=Emblems
-#Type=Fixed
-#
-#[scalable/emblems]
-#Context=Emblems
-#Size=16
-#MinSize=8
-#MaxSize=512
-#Type=Scalable
+[48x48/emblems]
+Size=48
+Context=Emblems
+Type=Fixed
+
+[scalable/emblems]
+Context=Emblems
+Size=16
+MinSize=8
+MaxSize=512
+Type=Scalable
