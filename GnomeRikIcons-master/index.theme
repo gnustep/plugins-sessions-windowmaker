@@ -2,8 +2,7 @@
 Name=Rik Icons
 Comment=An icon pack to integrate with GNUstep's Rik.theme
 
-Inherits=Numix-Circle-Light
-
+Inherits=gnome,hicolor
 Example=directory-x-normal
 
 # Directory list
