@@ -10,6 +10,8 @@ else
     /usr/local/bin/gdnc &
 fi
 
+
+#In Debian Wheezy, gnome-settings-daemon is the perfect tool to handle gtk-apps preferences. With it, you'll have theming, access to sound keys,etc. 
 #gnome-settings-daemon
 if ps ux | grep -v grep | grep 'gnome-settings-daemon' > /dev/null
 then 
@@ -18,6 +20,17 @@ else
     echo "launching gnome-settings-daemon"
     gnome-settings-daemon &
 fi
+
+#In Debian Jessie, gnome-settings-daemons began to handle things differently : you must disable a dconf key if you don't want to see the cursor disappear, sound keys aren't working anymore. But mate-settings-daemon works flawlessly so you should use it instead. 
+
+#mate-settings-daemon
+#if ps ux | grep -v grep | grep 'mate-settings-daemon' > /dev/null
+#then 
+#    echo "mate-settings-daemon running, everything is fine"
+#else
+#    echo "launching mate-settings-daemon"
+#    mate-settings-daemon &
+#fi
 
 #compton
 if ps ux | grep -v grep | grep 'compton' > /dev/null
@@ -33,6 +46,15 @@ then
     echo "GWorkspace is running"
 else
     openapp GWorkspace &
+fi
+
+#polkit-gnome-authentication-agent-1
+if ps ux | grep -v grep | grep 'polkit-gnome-authentication-agent-1' > /dev/null
+then
+    echo "polkit-gnome-authentication-agent-1 running, everything is fine"
+else
+    echo "polkit-gnome-authentication-agent-1"
+    /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 fi
 
 #AClock 
