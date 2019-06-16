@@ -1,4 +1,4 @@
-Configs and scripts to launch a WindowMaker session with GNUstep, gnome-settings-daemon, conky and compton as compositing manager, and a few GNUstep apps : gdomap; gdnc, GWorkspace, AClock and a little top panel GSPanel.. A Windowmaker theme, a Gnome theme and an icontheme are also provided so that the look will be more coherent with GNUstep's rik.theme.
+Configs and scripts to launch a WindowMaker session with GNUstep, gnome-settings-daemon/mate-settings-daemon, conky and compton as compositing manager, and a few GNUstep apps : gdomap; gdnc, GWorkspace, AClock and a little top panel TppBa.. A Windowmaker theme, a Gnome theme and an icontheme are also provided so that the look will be more coherent with GNUstep's rik.theme.
 
 The windowmaker theme Rik.themed is a modifyed version of the Rhaps theme from https://www.opendesktop.org/s/Window-Managers/p/1018322/. 
 
