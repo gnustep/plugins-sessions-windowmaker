@@ -28,3 +28,7 @@ myDF-Arc-OSX is a modified version of DF-Arc-OSX at https://www.gnome-look.org/c
 
 - TopBar can be found here : https://github.com/BertrandDekoninck/TopBar. Its purpose it to have a persistant bar at the top of the screen when non-gnustep's apps have the focus. For now, TopBar is covered by GNUstep menus when a gnustep app has the focus. If you use a compositor (compton), you can enable the transparency of gnustep's menubar when using rik.theme and typing the following command in a terminal : 'defaults write NSGlobalDomain RikMenuBarTransparency 0.0'. But the widgets of TopBar will still be covered and unclickable when a gnustep app has the focus. This is a work-in-progress. I want to reduce the width of gnustep's menubar in order to leave the right side of TopBar clickable.
 
+
+Lastly, I wrote several app wrappers for non gnustep's apps. You can install them in any applications directory of GNUstep and relaunch GWorkspace. You will have to set the default app for each particular mimetype using GWorkspace tools inspector (use the #3 shortcut when an icon of the mimtype is selected). You can find these wrappers at https://github.com/BertrandDekoninck/RikIcons/tree/master/AppWrappers.
+
+Have fun with GNUstep !
