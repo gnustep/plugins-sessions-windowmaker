@@ -11,21 +11,21 @@ else
 fi
 
 
-#In Debian Wheezy, gnome-settings-daemon is the perfect tool to handle gtk-apps preferences. With it, you'll have theming, access to sound keys,etc. 
+#In Debian Wheezy, gnome-settings-daemon is the perfect tool to handle gtk-apps preferences. With it, you'll have theming, access to sound keys,etc.
 #gnome-settings-daemon
 if ps ux | grep -v grep | grep 'gnome-settings-daemon' > /dev/null
-then 
+then
     echo "gnome-settings-daemon running, everything is fine"
 else
     echo "launching gnome-settings-daemon"
     gnome-settings-daemon &
 fi
 
-#In Debian Jessie, gnome-settings-daemons began to handle things differently : you must disable a dconf key if you don't want to see the cursor disappear, sound keys aren't working anymore. But mate-settings-daemon works flawlessly so you should use it instead. 
+#In Debian Jessie, gnome-settings-daemons began to handle things differently : you must disable a dconf key if you don't want to see the cursor disappear, sound keys aren't working anymore. But mate-settings-daemon works flawlessly so you should use it instead.
 
 #mate-settings-daemon
 #if ps ux | grep -v grep | grep 'mate-settings-daemon' > /dev/null
-#then 
+#then
 #    echo "mate-settings-daemon running, everything is fine"
 #else
 #    echo "launching mate-settings-daemon"
@@ -34,10 +34,10 @@ fi
 
 #compton
 if ps ux | grep -v grep | grep 'compton' > /dev/null
-then 
+then
     echo "compton is running"
 else
-    compton &
+    compton -b
 fi
 
 #GWorkspace
@@ -57,7 +57,7 @@ else
     /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 fi
 
-#AClock 
+#AClock
 if ps ux | grep -v grep | grep 'AClock' > /dev/null
 then
     echo "AClock is running"
@@ -67,7 +67,7 @@ fi
 
 #GSPanel
 if ps ux | grep -v grep | grep 'GSPanel' > /dev/null
-then 
+then
     echo "GSPanel is running"
 else
     openapp GSPanel.app &
