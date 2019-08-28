@@ -1,0 +1,135 @@
+diff --git a/Linux/autostart b/Linux/autostart
+index 3666c18..440aa3d 100644
+--- a/Linux/autostart
++++ b/Linux/autostart
+@@ -7,22 +7,18 @@ then
+     echo "gdnc running, everything is fine"
+ else
+     echo "launching gdnc"
+-    /usr/local/bin/gdnc &
++    /usr/GNUstep/Local/Tools/gdnc &
+ fi
+-
+-
+ #In Debian Wheezy, gnome-settings-daemon is the perfect tool to handle gtk-apps preferences. With it, you'll have theming, access to sound keys,etc.
+ #gnome-settings-daemon
+-if ps ux | grep -v grep | grep 'gnome-settings-daemon' > /dev/null
+-then
+-    echo "gnome-settings-daemon running, everything is fine"
+-else
+-    echo "launching gnome-settings-daemon"
+-    gnome-settings-daemon &
+-fi
+-
++#if ps ux | grep -v grep | grep 'gnome-settings-daemon' > /dev/null
++#then
++#    echo "gnome-settings-daemon running, everything is fine"
++#else
++#    echo "launching gnome-settings-daemon"
++#    gnome-settings-daemon &
++#fi
+ #In Debian Jessie, gnome-settings-daemons began to handle things differently : you must disable a dconf key if you don't want to see the cursor disappear, sound keys aren't working anymore. But mate-settings-daemon works flawlessly so you should use it instead.
+-
+ #mate-settings-daemon
+ #if ps ux | grep -v grep | grep 'mate-settings-daemon' > /dev/null
+ #then
+@@ -31,7 +27,6 @@ fi
+ #    echo "launching mate-settings-daemon"
+ #    mate-settings-daemon &
+ #fi
+-
+ #compton
+ if ps ux | grep -v grep | grep 'compton' > /dev/null
+ then
+@@ -39,7 +34,6 @@ then
+ else
+     compton -b
+ fi
+-
+ #GWorkspace
+ if ps ux | grep -v grep | grep 'GWorkspace' > /dev/null
+ then
+@@ -47,7 +41,6 @@ then
+ else
+     openapp GWorkspace &
+ fi
+-
+ #polkit-gnome-authentication-agent-1
+ if ps ux | grep -v grep | grep 'polkit-gnome-authentication-agent-1' > /dev/null
+ then
+@@ -56,23 +49,20 @@ else
+     echo "polkit-gnome-authentication-agent-1"
+     /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+ fi
+-
+ #AClock
+-if ps ux | grep -v grep | grep 'AClock' > /dev/null
+-then
+-    echo "AClock is running"
+-else
+-    openapp AClock &
+-fi
+-
+-#GSPanel
+-if ps ux | grep -v grep | grep 'GSPanel' > /dev/null
++#if ps ux | grep -v grep | grep 'AClock' > /dev/null
++#then
++#    echo "AClock is running"
++#else
++#    openapp AClock &
++#fi
++#TopBar
++if ps ux | grep -v grep | grep 'TopBar' > /dev/null
+ then
+-    echo "GSPanel is running"
++    echo "TopBar is running"
+ else
+-    openapp GSPanel.app &
++    openapp TopBar.app &
+ fi
+-
+ #conky
+ if ps ux | grep -v grep | grep 'conky' > /dev/null
+ then
+diff --git a/compton.conf b/compton.conf
+index 159db7a..2706e0d 100644
+--- a/compton.conf
++++ b/compton.conf
+@@ -5,7 +5,7 @@ clear-shadow = true;
+ shadow-radius = 15;
+ shadow-offset-x = -20;
+ shadow-offset-y = -20;
+-shadow-exclude = [ "name = 'Notification'", "class_g = 'Conky'", "class_g ?= 'Notify-osd'", "class_g = 'Cairo-clock'","class_g = 'GSPanel'", "class_g TopBar","_GTK_FRAME_EXTENTS@:c"];
++shadow-exclude = [ "name = 'Notification'", "class_g = 'Conky'", "class_g ?= 'Notify-osd'", "class_g = 'Cairo-clock'","class_g = 'GSPanel'","_GTK_FRAME_EXTENTS@:c"];
+ shadow-ignore-shaped = false;
+ shadow-opacity=0.5;
+ 
+@@ -26,7 +26,7 @@ fade-out-step = 0.1;
+ fade-exclude = [ ];
+ 
+ # Other
+-backend = "glx"
++backend = "xrender"
+ mark-wmwin-focused = true;
+ mark-ovredir-focused = true;
+ detect-rounded-corners = true;
+@@ -41,13 +41,13 @@ detect-client-leader = true;
+ invert-color-include = [ ];
+ 
+ # GLX backend
+-glx-no-stencil = true;
+-glx-copy-from-front = false;
+-glx-no-rebind-pixmap = true;
+-glx-swap-method = "undefined";
++#glx-no-stencil = true;
++#glx-copy-from-front = false;
++#glx-no-rebind-pixmap = true;
++#glx-swap-method = "undefined";
+ 
+ # Window type settings
+ wintypes:
+ {
+   tooltip = { fade = true; shadow = false; opacity = 0.75; focus = true; };
+-};
+\ No newline at end of file
++};
