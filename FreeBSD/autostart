@@ -35,21 +35,23 @@ else
     openapp GWorkspace &
 fi
 
-#AClock 
-if ps ux | grep -v grep | grep 'AClock'
-then
-    echo "AClock is running"
+##AClock 
+#if ps ux | grep -v grep | grep 'AClock'
+#then
+#    echo "AClock is running"
+#else
+#    openapp AClock &
+#fi
+
+#TopBar
+if ps ux | grep -v grep | grep 'TopBar'
+then 
+    echo "TopBar is running"
 else
-    openapp AClock &
+    openapp TopBar.app &
 fi
 
-#GSPanel
-if ps ux | grep -v grep | grep 'GSPanel'
-then 
-    echo "GSPanel is running"
-else
-    openapp GSPanel.app &
-fi
+
 if ps ux | grep -v grep | grep 'conky'
 then
     echo "conky is running"
