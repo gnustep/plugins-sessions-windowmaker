@@ -1,0 +1,37 @@
+{
+  FrameBorderColor = "#000000";
+  FTitleColor = "#f1f1f1";
+  MenuTitleBack = (spixmap, title_inac.png, "#000000");
+  MenuDisabledColor = "#464646";
+  IconTitleBack = "#505a5e";
+  FTitleBack = (spixmap, title.png, "#000000");
+  ClipTitleFont = "Verdana:bold:pixelsize=10";
+  ClipTitleColor = "#000000";
+  FrameFocusedBorderColor = "#000000";
+  IconTitleFont = "Arial,Luxi Sans:pixelsize=9";
+  HighlightColor = "#9285b5";
+  WindowTitleFont = "Liberation Sans:slant=0:weight=200:width=100:pixelsize=11";
+  MenuTextBack = (solid, "#464646");
+  LargeDisplayFont = "Trebuchet MS,Luxi Sans:pixelsize=24";
+  CClipTitleColor = "#616161";
+  MenuStyle = flat;
+  ResizebarBack = (spixmap, scaler.png, "#acacac");
+  IconTitleColor = "#fefefe";
+  TitleJustify = center;
+  MenuTextColor = "#f3f3f3";
+  MenuTextExtendSpace = 0;
+  PTitleBack = (spixmap, title.png, "#000000");
+  IconBack = (spixmap, tile4.png, "#000000");
+  MenuTitleColor = "#f1f1f1";
+  UTitleColor = "#989898";
+  MenuTitleFont = "Trebuchet MS,Luxi Sans:bold:pixelsize=12";
+  UTitleBack = (spixmap, title_inac.png, "#000000");
+  WindowTitleExtendSpace = 0;
+  NormalCursor = (builtin, left_ptr);
+  PTitleColor = "#8d8d8d";
+  MenuTitleExtendSpace = 0;
+  MenuTextFont = "Trebuchet MS,Luxi Sans:pixelsize=12";
+  WorkspaceBack = (solid, "#554466");
+  FrameSelectedBorderColor = "#ffffff";
+  HighlightTextColor = "#ffffff";
+}
