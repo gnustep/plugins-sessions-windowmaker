@@ -1,4 +1,4 @@
-These are configs and scripts to launch a "mac-like" WindowMaker session with GNUstep. It uses gnome-settings-daemon/mate-settings-daemon, conky and compton as compositing manager, and a few GNUstep apps : gdomap; gdnc, GWorkspace, AClock and a persistant panel at the top of the screen : TopBar. A Windowmaker theme, a Gnome theme and an icontheme are also provided so that the look will be more coherent with GNUstep's rik.theme and Sombre.theme.
+These are configs and scripts to launch a "mac-like" WindowMaker session with GNUstep. GNUstep will use themes like rik.theme, NesedahRik.theme, NarcissusRik.theme, or Sombre.theme, that use a globalmenubar setting, and icons from It uses gnome-settings-daemon/mate-settings-daemon, conky and compton as compositing manager, and a few GNUstep apps : gdomap; gdnc, GWorkspace, AClock and a persistant panel at the top of the screen : TopBar. A Windowmaker theme, a Gnome theme and an icontheme are also provided so that the look will be more coherent with GNUstep's rik.theme and Sombre.theme.
 
 The windowmaker theme Rik.themed is a modifyed version of the Rhaps theme from https://www.opendesktop.org/s/Window-Managers/p/1018322/. 
 
@@ -12,7 +12,7 @@ myDF-Arc-OSX is a modified version of DF-Arc-OSX at https://www.gnome-look.org/c
 
 - conkyrc must be renamed ~/.conkyrc
 
-- Rik.themed and Sombre.themed are to be put in  ~/GNUstep/Library/Windowmaker/Themes. You will be able to select it with Windowmaker desktop menu.
+- Rik.themed and Sombre.themed for WindowMaker are to be put in  ~/GNUstep/Library/Windowmaker/Themes. You will be able to select it with Windowmaker desktop menu.
 
 - gnome themes like GnomeRikIcons-master and whiteSur-gtk-theme are to be put in /usr/share/icons or in ~/local/share/icons. I whiteSur-gtk-theme must be build and installed using the scripts provided in the github repo.
 
@@ -20,7 +20,11 @@ myDF-Arc-OSX is a modified version of DF-Arc-OSX at https://www.gnome-look.org/c
 
 - you can use Gnome-tweak-tool (if using gnome-settings-daemon) or Mate preferences (if using mate-settings-daemon) to use GnomeRikIcons-master and myDF-Arc-OSX in gnome-apps. I prefer to use mate-settings-daemon since gnome-settings-daemon let the pointer disappear if it handles it and you need to adjust this particular settings in the dconf databse.
 
-- my version of rik.theme for GNUstep can be found at https://github.com/BertrandDekoninck/rik.theme and shall be installed in ~/GNUstep/Library/Themes or in your system GNUstep/Library/Themes folder. You can set it up for all gnustep's apps by typing this in a terminal : 'defaults write NSGlobalDomain GSTheme Rik'.
+- rik.theme for GNUstep can be found at https://github.com/AlessandroSangiuliano/rik.theme and shall be installed in ~/GNUstep/Library/Themes or in your system GNUstep/Library/Themes folder. You can set it up for all gnustep's apps by typing this in a terminal : 'defaults write NSGlobalDomain GSTheme Rik'.
+![newscreen](https://user-images.githubusercontent.com/12986802/138477523-859a58d3-03ac-4a54-84fa-a644ef8ad1c2.png)
+
+- Sombre.theme for GNUstep can found at https://github.com/gnustep/Sombre
+![Screenshot](https://user-images.githubusercontent.com/12986802/138485547-5d5947fc-e259-4b46-b7e4-c45ad338ba3c.png)
 
 - GWorkspace can be found here : https://github.com/gnustep/apps-gworkspace.
 
