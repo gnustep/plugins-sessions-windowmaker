@@ -17,7 +17,7 @@ myDF-Arc-OSX is a modified version of DF-Arc-OSX at https://www.gnome-look.org/c
 - gnome themes like GnomeRikIcons-master and whiteSur-gtk-theme are to be put in /usr/share/icons or in ~/local/share/icons. WhiteSur-gtk-theme must be build and installed using the scripts provided in its github repo.
 
 - myDF-Arc-OSX goes in /usr/share/themes or in ~/share/themes. WhiteSur-Icon-Theme can be configured and installed using the scripts provided in its github repo.
-v ufk vfv gf - you can use Gnome-tweak-tool (if using gnome-settings-daemon) or Mate preferences (if using mate-settings-daemon) to use GnomeRikIcons-master and myDF-Arc-OSX in gtk-apps. I prefer to use mate-settings-daemon since gnome-settings-daemon let the pointer disappear if it handles it and you need to adjust this particular settings in the dconf databse.
+- you can use Gnome-tweak-tool (if using gnome-settings-daemon) or Mate preferences (if using mate-settings-daemon) to use GnomeRikIcons-master and myDF-Arc-OSX in gtk-apps. I prefer to use mate-settings-daemon since gnome-settings-daemon let the pointer disappear if it handles it and you need to adjust this particular settings in the dconf databse.
 
 - rik.theme for GNUstep can be found at https://github.com/AlessandroSangiuliano/rik.theme and shall be installed in ~/GNUstep/Library/Themes or in your system GNUstep/Library/Themes folder. You can set it up for all gnustep's apps by typing this in a terminal : 'defaults write NSGlobalDomain GSTheme Rik'.
 ![newscreen](https://user-images.githubusercontent.com/12986802/138477523-859a58d3-03ac-4a54-84fa-a644ef8ad1c2.png)
@@ -30,7 +30,6 @@ v ufk vfv gf - you can use Gnome-tweak-tool (if using gnome-settings-daemon) or 
 - AClock is part of the GNUstep Applications Project and can be found here : https://savannah.nongnu.org/projects/gap
 
 - TopBar can be found here : https://github.com/gnustep/TopBar. Its purpose is to have a persistant bar at the top of the screen when non-gnustep's apps have the focus. TopBar is covered by GNUstep menus when a gnustep app has the focus. If you use a compositor (compton), you can enable the transparency of gnustep's menubar when using rik.theme and typing the following command in a terminal : 'defaults write NSGlobalDomain RikMenuBarTransparency 0.0'. But the widgets of TopBar will still be covered and unclickable when a gnustep app has the focus. This is a work-in-progress. I thought to reduce the length of gnustep's menubar in order to leave the right side of TopBar clickable, but I clearly don't have the skills to program this in rik.
-
 
 Lastly, I wrote several app wrappers for non gnustep's apps. You can install them in any applications directory of GNUstep and relaunch GWorkspace. You will have to set the default app for each particular mimetype using GWorkspace tools inspector (use the #3 shortcut when an icon of the mimetype is selected). You can find these wrappers at https://github.com/gnustep/RikIcons/tree/master/AppWrappers.
 
